@@ -1,0 +1,10 @@
+<Files htusers>
+deny from all
+</Files>
+AuthUserFile "/home/single-task/public_html/htusers"
+AuthType Basic
+AuthName "Protected"
+require valid-user
+<Files htusers>
+deny from all
+</Files>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manipulate and save canvas</title>
+</head>
+<body onload="myFunction()">
+    
+<img src="image.jpg" id="image" style="display:none;"> <!-- Load the original, user image --> 
+<img id="canvasImg" style="border:1px #ccc solid;" alt="Right click to save me!"> <!-- Create empty image for canvas data to be added to later --> 
+<div id="CanvasContainer" style="display:none;"></div> <!-- Container to hold the canvas which will be created by Javascipt -->    
+    
+    <div id="console"></div>
+    
+<script>
+    function myFunction()
+    {
+        var elem = document.getElementById("image")
+        var height = elem.height; 
+        var width = elem.width; 
+        
+        // inspect the dimensions of the user image to determine what size the canvas needs to be, in this simple example we have assumed the user image is portrait so we need to adjust the width in keeping with our target height/width ratio. 
+        
+        //Determine if image is portrait, landscape or square
+        if (height >= width){
+            var orientation = "Portrait";
+        }
+        else{
+            var orientation = "Landscape";
+        }
+        
+
+        
+        //portrait images: height / 1.19 =  new canvas width
+        //landscape images: width / 1.19 = new canvas height
+        var console = document.getElementById("console");
+        console.innerHTML=height + " " + width + " " + orientation;
+        
+        if (orientation == "Portrait"){
+            var canvaswidth = height/1.19; 
+            var canvasheight = height;
+        }
+        
+        if (orientation == "Landscape"){
+            var canvaswidth = width;
+            var canvasheight = width*1.19; 
+        }
+        
+        var canvas = document.createElement('canvas');
+        canvas.id = "CursorLayer";
+        canvas.width = canvaswidth;
+        canvas.height = canvasheight;
+        canvas.style.zIndex = 8;
+        canvas.style.position = "absolute";
+        canvas.style.border = "1px solid";
+            
+        var container = document.getElementById('CanvasContainer');
+        container.appendChild(canvas);  
+            
+        if (orientation == "Portrait"){var pastewidth = (canvaswidth/2) - (width/2);}
+        if (orientation == "Landscape"){var pasteheight = (canvasheight/2) - (height/2);} 
+        
+        context = canvas.getContext('2d');    
+        paste_image = new Image();
+        paste_image.src = 'image.jpg';
+        
+        context.rect(0, 0, canvas.width, canvas.height);
+        context.fillStyle="white";
+        context.fill();
+        //paste the user image into the center of the newly created canvas
+        if (orientation == "Portrait"){context.drawImage(paste_image, pastewidth, 0); }
+        if (orientation == "Landscape"){context.drawImage(paste_image, 0, pasteheight); }
+            
+        var dataURL = canvas.toDataURL("image/jpeg"); // save canvas image as data url
+        
+        document.getElementById('canvasImg').src = dataURL; // set canvasImg image src to dataURL so it can be saved as an image           
+    }        
+</script>
+<form action="upload_file.php" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file"><br>
+<input type="submit" name="submit" value="Submit">
+</form>    
+</body>
+</html>
