@@ -1,7 +1,12 @@
 <html>
+<head>
+<title>Tasks</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/singletask.css" rel="stylesheet">
+</head>
 <body>
 	<h1 align="center">All Tasks</h1>
-    <div align="center">
+    <div align="center" id="AppContainer">
 	<?php
     require('../dbconnect.php');
 	mysql_query("USE single_task", $dbc);

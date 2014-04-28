@@ -1,5 +1,11 @@
+<html>
+<head>
+<title>Add a task</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/singletask.css" rel="stylesheet">
+</head>
 <h1 align="center">Add another task</h1>
-<div align="center">	
+<div align="center" id="AppContainer">	
 <?php
 if(isset($_POST['update']))
 {
