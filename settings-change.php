@@ -1,9 +1,11 @@
 <html>
 <head>
 <title>Change Settings</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/singletask.css" rel="stylesheet">
 </head>
 <body>
-<div align="center">
+<div align="center" id="AppContainer">
 <?php
 if(isset($_POST['update']))
 {
