@@ -19,11 +19,6 @@
             $settingssatsun = $settingsrow['include_sat_sun'];
             
     $daysonhours = round($hours/$settingshours,0);
-            
-
-    
-
-    
     
 	$result = mysql_query("SELECT * FROM tasklist WHERE completed=0");
 	$velocity = mysql_query("select round(sum(duration)/60,2) from tasklist where date(datecompleted)=curdate()");
@@ -94,11 +89,9 @@
          else {
              echo ".";
          }
-         echo "Your current velocity over the last day is xxxxx tasks per day<br/>";
+
          echo "Your current velocity over the last week is xxxxx tasks per day<br/>";
-         echo "Your current velocity over the last month is xxxx tasks per day<br/>";
-         echo "Your current vecocity over the last quarter is xxxx tasks per day<br/>";
-         echo "Your current velocity over the last year is xxxx tasks per day<br/>";
+
 	?>	
 <br/>
 <a href="index.php">Home</a> | <a href="add.php">Add a Task</a> | <a href="settings.php">Settings</a> | <a href="tasks.php">Show All Tasks</a> | <a href="stats.php">Stats</a> | <a href="update-date-scores.php">Update Scores</a>
