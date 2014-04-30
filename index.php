@@ -33,7 +33,7 @@
     
 	echo "There are <strong>$num_rows</strong> Tasks on your list in total ";
     echo "that will take about <strong>$daysonhours</strong> days.<br/><br/>";
-    echo "If it's fully time critical, the task should go into your calendar then you can take it off this list. Always check your calendar regularly for these time critical tasks. <br/><br/>";
+    echo "If it's fully time critical, the task should go into your calendar then you can take it off this list. Always check your calendar regularly for these time critical tasks. <br/><br/> --I want to add in a search box here so you can search if tasks are already on the list... --<br/><br/>";
     echo "Today's velocity is" . $velresult;
         
     $result2 = mysql_query("SELECT * FROM tasklist WHERE completed=0 ORDER BY score DESC");
@@ -80,7 +80,7 @@
 		$q2 = mysql_query("UPDATE tasklist SET completed = 1 WHERE TID = $TID") or die(mysql_error());
         $P2 = mysql_query("UPDATE tasklist SET datecompleted = NOW() WHERE TID = $TID") or die(mysql_error());
 			if($q2) { 
-				echo "<a href='index.php'>Refresh</a><br/>"; 
+				echo "<a href='index.php'>Refresh</a> Add a repeat task?<br/>"; 
 			}
 			else { 
 				echo "error"; 
