@@ -98,10 +98,8 @@
 
 	?>	
 <br/>
-        <div class="textMenu">
 <a href="index.php">Home</a> | <a href="add.php">Add a Task</a> | <a href="settings.php">Settings</a> | <a href="tasks.php">Show All Tasks</a> | <a href="stats.php">Stats</a> | <a href="update-date-scores.php">Update Scores</a>
-</div>
-            <br />
+<br />
 </div>
 </body>
 </html>

@@ -1,0 +1,56 @@
+body{
+    font-size:100%;
+    font-family: 'PT Sans', 'sans-serif';
+    font-weight:400;
+    background-color:#f1f1f1;
+}
+
+#AppContainer{
+    width: 80%;
+    margin: 0 auto;
+    padding: 2em;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0px 1px 7px #CCC;
+}
+
+h1{
+    color:#0054a6;
+    font-weight:400;
+}
+
+a, a:link, a:visited{
+color:#3366cc;
+}
+
+.textMenu a{margin:0em 0.2em; text-decoration: none;}
+
+input[type=submit]{
+    background: #0054A6;
+    background: linear-gradient(to bottom, #448ccb 0%, #0054A6 100%);
+    padding: 0.5em 1em;
+    border: 1px solid #0054A6;
+    border-radius: 3px;
+    color: #FFF;
+    font-size: 1em;
+    box-shadow: inset 0px -1px 0px #469ae2;
+    cursor: pointer;
+    text-shadow: 0px 1px 0px #0054A6;
+}
+
+input[type=submit]:hover{
+    background: #448ccb;
+    background: linear-gradient(to bottom, #5a99d0 0%, #206bb2 100%);
+}
+
+form{margin: 1em 0em;}
+
+.textMenu{
+    background: #F1F1F1;
+    border: 1px solid #CCC;
+    padding: 0.3em;
+    margin: 1em 0em 0em 0em;
+    width: 70%;  
+    color: #CCC;
+    border-radius:5px;
+}
