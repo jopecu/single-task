@@ -1,4 +1,8 @@
 <html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/singletask.css" rel="stylesheet">
+</head>
 <body>
 	<h1 align="center">Single Task Homepage</h1>
     <div align="center">
